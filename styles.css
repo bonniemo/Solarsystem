@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* COLOR */
+  --text-color: #ffffff;
+  --subheading-color: #ffd029;
+  --bg-color: linear-gradient(#0c164d, #190b22);
+
+  /* FONTS */
+  --font-p: "Roboto Condensed", sans-serif;
+  --font-heading: "Secular One", sans-serif;
+  --font-subheading: "Lora", serif;
+
+  /* FONTSIZE */
+  --h1-size: 1.2rem;
+  /* check how to relate to h1 */
+  --h2-size: 1rem;
+  --p-size: 1.125rem;
+
+  --h1-size-desktop: 3.75rem;
+  --h2-size-desktop: 1.5rem;
+}
+
+body {
+  color: var(--text-color);
+  /* FIX LINEAR GRADIENT */
+  background-color: #0c164d;
+}
+
+@media screen and (min-width: 900px) {
+  .solarsystem {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 30vh;
+  }
+}
+
+.txt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  z-index: 999;
+  top: 2.5rem;
+  background-color: rgb(0, 0, 0, 0.8);
+  padding: 0.8rem;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: var(--h1-size);
+  letter-spacing: 0.3rem;
+}
+
+.subheading {
+  font-family: var(--font-subheading);
+  font-size: var(--h2-size);
+  color: var(--subheading-color);
+  letter-spacing: 1rem;
+}
+
+/* SOLAR SYSTEM BODIES */
+
+.solarsystem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+@media screen and (min-width: 900px) {
+  .solarsystem {
+    margin: auto;
+    max-width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+#Solen {
+  width: 90vw;
+  height: 25rem;
+  border-radius: 50%;
+  transform: translateY(-80%);
+  background-color: #ffd029;
+  position: relative;
+}
+
+#Merkurius {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #888888;
+  position: relative;
+  top: -20rem;
+}
+
+#Venus {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #e7cdcd;
+  justify-self: center;
+  position: relative;
+  top: -20rem;
+}
+
+#Jorden {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #428ed4;
+  justify-self: center;
+  position: relative;
+  top: -20rem;
+}
+
+#Mars {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ef5f5f;
+  justify-self: center;
+  position: relative;
+  top: -20rem;
+}
+
+#Jupiter {
+  width: 188px;
+  height: 188px;
+  border-radius: 50%;
+  background-color: #e29468;
+  justify-self: center;
+  position: relative;
+  top: -20rem;
+}
+
+#Saturnus {
+  width: 144px;
+  height: 144px;
+  border-radius: 50%;
+  background-color: #c7aa72;
+  justify-self: center;
+  position: relative;
+  top: -20rem;
+}
+
+/* .saturn__ring {
+  width: 218px;
+  height: 5.5px;
+  background-color: white;
+  opacity: 0.4;
+  border-radius: 50%;
+  transform: rotateZ(-30deg);
+  position: absolute;
+} */
+
+#Uranus {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background-color: #c9d4f1;
+  justify-self: center;
+  position: relative;
+  top: -20rem;
+}
+
+#Neptunus {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background-color: #7a91a7;
+  justify-self: center;
+  position: relative;
+  top: -20rem;
+}
+
+/* MODAL */
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+  overflow: scroll;
+  grid-row: 1 / auto;
+  grid-column: 1 / auto;
+  background-image: var(--bg-color);
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 40px 500px 200px;
+}
+
+.hidden {
+  display: none;
+}
+
+.fa-solid {
+  color: #ffffff;
+  grid-row: 1;
+  grid-column: 2;
+  text-align: end;
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+.sun__one {
+  grid-column: 1;
+  grid-row: 1;
+  width: 450px;
+  height: 740px;
+  border-radius: 50%;
+  transform: translateX(-80%);
+  background-color: #428ed4;
+}
+
+.sun__two {
+  grid-column: 1;
+  grid-row: 1;
+  width: 450px;
+  height: 740px;
+  border-radius: 50%;
+  transform: translateX(-70%);
+  background-color: #428ed4;
+  opacity: 10%;
+}
+
+.sun__three {
+  grid-column: 1;
+  grid-row: 1;
+  width: 450px;
+  height: 740px;
+  border-radius: 50%;
+  transform: translateX(-60%);
+  background-color: #428ed4;
+  opacity: 6%;
+}
+
+.planet__facts {
+  max-width: 50%;
+  grid-column: 2/6;
+  grid-row: 2/4;
+}
+
+.name {
+  font-size: var(--h1-size);
+  font-family: var(--font-heading);
+}
+
+.name__latin {
+  color: var(--subheading-color);
+  font-family: var(--font-subheading);
+  font-size: var(--h2-size);
+}
+
+.about {
+  padding: 1rem 0rem;
+  font-family: var(--font-p);
+  font-size: var(--p-size);
+}
+
+.sec__number__facts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 2rem);
+  padding: 2rem 0rem;
+  margin: 1rem 0rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.circumf__h {
+  grid-column: 1;
+  grid-row: 1;
+  font-family: var(--font-heading);
+  font-size: var(--p-size);
+  font-weight: 100;
+}
+
+.circumf {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.distance__h {
+  font-family: var(--font-heading);
+  font-size: var(--p-size);
+  font-weight: 100;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.distance {
+  font-family: var(--font-p);
+  font-size: var(--p-size);
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.temp__day__h {
+  grid-column: 1;
+  grid-row: 4;
+  font-family: var(--font-heading);
+  font-size: var(--p-size);
+  font-weight: 100;
+}
+
+.temp__day {
+  grid-column: 1;
+  grid-row: 5;
+  font-family: var(--font-p);
+  font-size: var(--p-size);
+}
+
+.temp__night__h {
+  font-family: var(--font-heading);
+  font-size: var(--p-size);
+  font-weight: 100;
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.temp__night {
+  font-family: var(--font-p);
+  font-size: var(--p-size);
+  grid-column: 2;
+  grid-row: 5;
+}
+
+.moons__h {
+  font-family: var(--font-heading);
+  font-size: var(--p-size);
+  font-weight: 100;
+}
+
+.moons {
+  font-family: var(--font-p);
+  font-size: var(--p-size);
+  grid-column: 2/5;
+  list-style-type: none;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+  columns: 4;
+}
