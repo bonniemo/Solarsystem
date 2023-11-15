@@ -16,10 +16,9 @@
   --font-subheading: "Lora", serif;
 
   /* FONTSIZE */
-  --h1-size: 1.2rem;
-  /* check how to relate to h1 */
-  --h2-size: 1rem;
-  --p-size: 1.125rem;
+  --h1-size: 1.5rem;
+  --h2-size: 1.2rem;
+  --p-size: 1rem;
 
   --h1-size-desktop: 3.75rem;
   --h2-size-desktop: 1.5rem;
@@ -40,16 +39,17 @@ body {
   }
 }
 
-.txt {
-  width: 100%;
+.landingpg__heading {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   position: absolute;
   z-index: 999;
   top: 2.5rem;
+  right: 0.8rem;
   background-color: rgb(0, 0, 0, 0.8);
   padding: 0.8rem;
+  border-radius: 1rem;
 }
 
 .heading {
@@ -189,84 +189,93 @@ body {
 }
 
 .modal {
-  height: 100vh;
-  width: 100vw;
-  z-index: 999;
-  overflow: scroll;
-  grid-row: 1 / auto;
-  grid-column: 1 / auto;
   background-image: var(--bg-color);
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  grid-template-rows: 40px 500px 200px;
+  min-height: 100vh;
 }
 
-.hidden {
-  display: none;
+.modal__close {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .fa-solid {
   color: #ffffff;
-  grid-row: 1;
-  grid-column: 2;
   text-align: end;
-  font-size: 2rem;
-  padding: 2rem;
+  font-size: 1.3rem;
+  padding: 0rem 1rem;
+  max-height: 2rem;
 }
 
 .sun__one {
-  grid-column: 1;
-  grid-row: 1;
-  width: 450px;
-  height: 740px;
+  width: 90vw;
+  margin: auto;
+  height: 25rem;
   border-radius: 50%;
-  transform: translateX(-80%);
+  transform: translateY(-80%);
   background-color: #428ed4;
 }
 
 .sun__two {
-  grid-column: 1;
-  grid-row: 1;
-  width: 450px;
-  height: 740px;
+  width: 90vw;
+  margin: auto;
+  height: 25rem;
   border-radius: 50%;
-  transform: translateX(-70%);
+  transform: translateY(-170%);
   background-color: #428ed4;
   opacity: 10%;
 }
 
 .sun__three {
-  grid-column: 1;
-  grid-row: 1;
-  width: 450px;
-  height: 740px;
+  width: 90vw;
+  margin: auto;
+  height: 25rem;
   border-radius: 50%;
-  transform: translateX(-60%);
+  transform: translateY(-100%);
   background-color: #428ed4;
   opacity: 6%;
+  position: relative;
+  top: -40rem;
+}
+
+.star {
+  position: absolute;
+  background-color: #fff8dc;
+  box-shadow: 0.05rem 0.1rem 0.5rem 0.1rem #fff8dc;
+  width: 0.1rem;
+  height: 0.1rem;
+  border-radius: 50%;
+  z-index: 999;
 }
 
 .planet__facts {
-  max-width: 50%;
-  grid-column: 2/6;
-  grid-row: 2/4;
+  max-width: 80%;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: auto;
+  background-color: rgb(0, 0, 0, 0.3);
+  position: relative;
+  top: -60rem;
 }
 
 .name {
   font-size: var(--h1-size);
   font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
 }
 
 .name__latin {
   color: var(--subheading-color);
   font-family: var(--font-subheading);
   font-size: var(--h2-size);
+  letter-spacing: 0.1rem;
 }
 
 .about {
   padding: 1rem 0rem;
   font-family: var(--font-p);
   font-size: var(--p-size);
+  line-height: 1.5rem;
 }
 
 .sec__number__facts {
@@ -290,6 +299,7 @@ body {
 .circumf {
   grid-column: 1;
   grid-row: 2;
+  align-self: flex-end;
 }
 
 .distance__h {
@@ -305,6 +315,7 @@ body {
   font-size: var(--p-size);
   grid-column: 2;
   grid-row: 2;
+  align-self: flex-end;
 }
 
 .temp__day__h {
@@ -320,6 +331,7 @@ body {
   grid-row: 5;
   font-family: var(--font-p);
   font-size: var(--p-size);
+  align-self: flex-end;
 }
 
 .temp__night__h {
@@ -335,6 +347,7 @@ body {
   font-size: var(--p-size);
   grid-column: 2;
   grid-row: 5;
+  align-self: flex-end;
 }
 
 .moons__h {
@@ -344,11 +357,11 @@ body {
 }
 
 .moons {
+  max-width: 18rem;
   font-family: var(--font-p);
   font-size: var(--p-size);
-  grid-column: 2/5;
   list-style-type: none;
   line-height: 2rem;
-  margin-bottom: 2rem;
-  columns: 4;
+  columns: 2;
+  padding: 0.5rem 0rem 2rem;
 }

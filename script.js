@@ -1,7 +1,6 @@
 const apiUrl = "https://majazocom.github.io/Data/solaris.json";
 const modal = document.querySelector(".modal");
 const landingPage = document.querySelector(".solarsystem");
-const planetCont = document.querySelector(".solarsystem")
 let solarSystem = [];
 
 async function fetchSolarSystem() {
@@ -14,7 +13,7 @@ async function fetchSolarSystem() {
             planetElement.id = planet.name;
 
             planetElement.addEventListener("click", () => renderPlanetInfo(planet));
-            planetCont.appendChild(planetElement);
+            landingPage.appendChild(planetElement);
         });
     } catch (error) {
         console.error('Error fetching solar system data:', error);
@@ -67,3 +66,18 @@ btnClose.addEventListener("click", () => {
     landingPage.classList.remove("hidden");
     modal.classList.add("hidden");
 });
+
+// CREATE STARS
+
+const starCont = document.querySelector(".stars__cont");
+
+function createStars() {
+    for (let i = 0; i < 99; i++) {
+        const star = document.createElement("figure");
+        star.className = "star";
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        starCont.appendChild(star);
+    }
+}
+createStars();
