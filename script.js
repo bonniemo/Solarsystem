@@ -78,11 +78,11 @@ btnClose.addEventListener("click", () => {
 const starCont = document.querySelector(".stars__cont");
 
 function createStars() {
-    for (let i = 0; i < 99; i++) {
+    for (let i = 0; i < 50; i++) {
         const star = document.createElement("figure");
         star.className = "star";
         star.style.left = `${Math.random() * 100}%`;
-        star.style.top = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 150}%`;
         starCont.appendChild(star);
     }
 }
