@@ -1,6 +1,7 @@
 const apiUrl = "https://majazocom.github.io/Data/solaris.json";
 const modal = document.querySelector(".modal");
 const landingPage = document.querySelector(".solarsystem");
+const planetsCont = document.querySelector(".planets__cont");
 let solarSystem = [];
 
 async function fetchSolarSystem() {
@@ -11,9 +12,14 @@ async function fetchSolarSystem() {
         solarSystem.forEach(planet => {
             const planetElement = document.createElement("figure");
             planetElement.id = planet.name;
+            if (planet.name === "Solen") {
+                landingPage.appendChild(planetElement);
+            } else {               
+               planetsCont.appendChild(planetElement);
+            }
 
             planetElement.addEventListener("click", () => renderPlanetInfo(planet));
-            landingPage.appendChild(planetElement);
+            
         });
     } catch (error) {
         console.error('Error fetching solar system data:', error);
