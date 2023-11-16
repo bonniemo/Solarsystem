@@ -20,7 +20,7 @@
   --h2-size: 1.2rem;
   --p-size: 1rem;
 
-  --h1-size-desktop: 3.75rem;
+  --h1-size-desktop: 3.2rem;
   --h2-size-desktop: 1.5rem;
 }
 
@@ -49,15 +49,14 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 4rem;
-  padding-bottom: 3rem;
+  padding: 0rem 0rem 3rem 0rem;
 }
 
 @media screen and (min-width: 900px) {
   .planets__cont {
     flex-direction: row;
     justify-content: space-between;
-    padding-right: 2rem;
-    gap: 1rem;
+    padding: 0rem 2rem 0rem 0rem;
   }
 }
 
@@ -95,16 +94,11 @@ body {
   }
 
   .heading {
-    font-family: var(--font-heading);
     font-size: var(--h1-size-desktop);
-    letter-spacing: 0.3rem;
   }
 
   .subheading {
-    font-family: var(--font-subheading);
     font-size: var(--h2-size-desktop);
-    color: var(--subheading-color);
-    letter-spacing: 1rem;
   }
 }
 
@@ -213,7 +207,6 @@ body {
 
 .fa-solid {
   color: #ffffff;
-  text-align: end;
   font-size: 1.3rem;
   padding: 0rem 1rem;
   max-height: 2rem;
@@ -268,6 +261,12 @@ body {
   background-color: rgb(0, 0, 0, 0.3);
   position: relative;
   top: -60rem;
+}
+
+@media screen and (min-width: 900px) {
+  .planet__facts {
+    max-width: 50%;
+  }
 }
 
 .name {
