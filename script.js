@@ -39,7 +39,6 @@ const tempNight = document.querySelector(".temp__night");
 const moonUl = document.querySelector(".moons");
 
 function renderPlanetInfo(planet) {
-    console.log(planet.name);
     modal.classList.remove("hidden");
     landingPage.classList.add("hidden");
 
