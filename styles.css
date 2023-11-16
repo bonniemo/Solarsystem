@@ -141,7 +141,6 @@ body {
   height: 26px;
   border-radius: 50%;
   background-color: #e7cdcd;
-  justify-self: center;
 }
 
 #Jorden {
@@ -149,7 +148,6 @@ body {
   height: 28px;
   border-radius: 50%;
   background-color: #428ed4;
-  justify-self: center;
 }
 
 #Mars {
@@ -157,7 +155,6 @@ body {
   height: 14px;
   border-radius: 50%;
   background-color: #ef5f5f;
-  justify-self: center;
 }
 
 #Jupiter {
@@ -165,7 +162,6 @@ body {
   padding-bottom: 18%;
   border-radius: 50%;
   background-color: #e29468;
-  justify-self: center;
 }
 
 #Saturnus {
@@ -173,7 +169,6 @@ body {
   padding-bottom: 14%;
   border-radius: 50%;
   background-color: #c7aa72;
-  justify-self: center;
 }
 
 /* .saturn__ring {
@@ -191,7 +186,6 @@ body {
   height: 66px;
   border-radius: 50%;
   background-color: #c9d4f1;
-  justify-self: center;
 }
 
 #Neptunus {
@@ -199,7 +193,6 @@ body {
   height: 66px;
   border-radius: 50%;
   background-color: #7a91a7;
-  justify-self: center;
 }
 
 /* MODAL */
