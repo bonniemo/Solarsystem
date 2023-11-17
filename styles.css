@@ -26,8 +26,13 @@
 }
 
 body {
+  width: 100vw;
+  min-height: 100vh;
   color: var(--text-color);
   background-image: var(--bg-color);
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 
 .solarsystem {
