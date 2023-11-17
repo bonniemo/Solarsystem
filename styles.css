@@ -7,13 +7,13 @@
 :root {
   /* COLOR */
   --text-color: #ffffff;
-  --subheading-color: #ffd029;
+  --subheader-color: #ffd029;
   --bg-color: linear-gradient(#0c164d, #190b22);
 
   /* FONTS */
   --font-p: "Roboto Condensed", sans-serif;
-  --font-heading: "Secular One", sans-serif;
-  --font-subheading: "Lora", serif;
+  --font-header: "Secular One", sans-serif;
+  --font-subheader: "Lora", serif;
 
   /* FONTSIZE */
   --h1-size: 1.5rem;
@@ -22,12 +22,12 @@
 
   --h1-size-desktop: 3.2rem;
   --h2-size-desktop: 1.5rem;
+  --p-size-desktop: 1.125rem;
 }
 
 body {
   color: var(--text-color);
-  /* FIX LINEAR GRADIENT */
-  background-color: #0c164d;
+  background-image: var(--bg-color);
 }
 
 .solarsystem {
@@ -56,7 +56,8 @@ body {
   .planets__cont {
     flex-direction: row;
     justify-content: space-between;
-    padding: 0rem 2rem 0rem 0rem;
+    gap: 0rem;
+    padding: 0rem 1rem 0rem 0rem;
   }
 }
 
@@ -73,16 +74,16 @@ body {
   border-radius: 1rem;
 }
 
-.heading {
-  font-family: var(--font-heading);
+.header {
+  font-family: var(--font-header);
   font-size: var(--h1-size);
   letter-spacing: 0.3rem;
 }
 
-.subheading {
-  font-family: var(--font-subheading);
+.subheader {
+  font-family: var(--font-subheader);
   font-size: var(--h2-size);
-  color: var(--subheading-color);
+  color: var(--subheader-color);
   letter-spacing: 1rem;
 }
 
@@ -93,11 +94,11 @@ body {
     background-color: transparent;
   }
 
-  .heading {
+  .header {
     font-size: var(--h1-size-desktop);
   }
 
-  .subheading {
+  .subheader {
     font-size: var(--h2-size-desktop);
   }
 }
@@ -192,11 +193,16 @@ body {
 /* MODAL */
 
 .modal {
-  background-image: var(--bg-color);
-  min-height: 100vh;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 16rem auto;
+}
+
+@media screen and (min-width: 900px) {
+  .modal {
+    grid-template-columns: 20rem auto;
+    grid-template-rows: 10vh auto;
+  }
 }
 
 .modal__close {
@@ -247,41 +253,41 @@ body {
 }
 
 @media screen and (min-width: 900px) {
-  .modal {
-    grid-template-columns: 15rem auto;
-    grid-template-rows: auto;
-  }
   .sun__one {
     width: 400px;
     height: 100vh;
     border-radius: 50%;
-    transform: translateX(-80%);
+    transform: translateX(-70%);
     background-color: #328ed3;
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1/2;
   }
 
   .sun__two {
     width: 400px;
     height: 100vh;
     border-radius: 50%;
-    transform: translateX(-70%);
+    transform: translateX(-60%);
     background-color: #428ed4;
     opacity: 10%;
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1/2;
   }
 
   .sun__three {
     width: 400px;
     height: 100vh;
     border-radius: 50%;
-    transform: translateX(-60%);
+    transform: translateX(-50%);
     background-color: #428ed4;
     opacity: 6%;
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1/2;
   }
+}
+
+.stars__cont {
+  min-height: 100vh;
 }
 
 .star {
@@ -291,7 +297,6 @@ body {
   width: 0.1rem;
   height: 0.1rem;
   border-radius: 50%;
-  z-index: 999;
 }
 
 .planet__facts {
@@ -305,24 +310,40 @@ body {
 
 @media screen and (min-width: 900px) {
   .planet__facts {
-    max-width: 50%;
+    max-width: 80%;
     grid-column: 2;
-    grid-row: 1;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .planet__facts {
+    width: max(41rem, 50%);
   }
 }
 
 .name {
   font-size: var(--h1-size);
-  font-family: var(--font-heading);
+  font-family: var(--font-header);
   margin-bottom: 0.5rem;
   letter-spacing: 0.1rem;
 }
 
 .name__latin {
-  color: var(--subheading-color);
-  font-family: var(--font-subheading);
+  color: var(--subheader-color);
+  font-family: var(--font-subheader);
   font-size: var(--h2-size);
   letter-spacing: 0.1rem;
+}
+
+@media screen and (min-width: 900px) {
+  .name {
+    font-size: var(--h1-size-desktop);
+  }
+
+  .name__latin {
+    font-size: var(--h2-size-desktop);
+  }
 }
 
 .about {
@@ -345,7 +366,7 @@ body {
 .circumf__h {
   grid-column: 1;
   grid-row: 1;
-  font-family: var(--font-heading);
+  font-family: var(--font-header);
   font-size: var(--p-size);
   font-weight: 100;
 }
@@ -353,11 +374,12 @@ body {
 .circumf {
   grid-column: 1;
   grid-row: 2;
+  font-size: var(--p-size);
   align-self: flex-end;
 }
 
 .distance__h {
-  font-family: var(--font-heading);
+  font-family: var(--font-header);
   font-size: var(--p-size);
   font-weight: 100;
   grid-column: 2;
@@ -375,7 +397,7 @@ body {
 .temp__day__h {
   grid-column: 1;
   grid-row: 4;
-  font-family: var(--font-heading);
+  font-family: var(--font-header);
   font-size: var(--p-size);
   font-weight: 100;
 }
@@ -389,7 +411,7 @@ body {
 }
 
 .temp__night__h {
-  font-family: var(--font-heading);
+  font-family: var(--font-header);
   font-size: var(--p-size);
   font-weight: 100;
   grid-column: 2;
@@ -405,21 +427,42 @@ body {
 }
 
 .moons__h {
-  font-family: var(--font-heading);
+  font-family: var(--font-header);
   font-size: var(--p-size);
   font-weight: 100;
 }
 
 .moons {
-  max-width: 18rem;
   font-family: var(--font-p);
   font-size: var(--p-size);
   list-style-type: none;
   line-height: 2rem;
   columns: 2;
-  padding: 0.5rem 0rem 2rem;
+  padding: 0.5rem 1rem 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .moons {
+    columns: 4;
+  }
 }
 
 .hidden {
   display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .about,
+  .circumf__h,
+  .circumf,
+  .distance,
+  .distance__h,
+  .temp__day__h,
+  .temp__day,
+  .temp__night__h,
+  .temp__night,
+  .moons__h,
+  .moons {
+    font-size: var(--p-size-desktop);
+  }
 }
