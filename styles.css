@@ -30,11 +30,9 @@ body {
   min-height: 100vh;
   color: var(--text-color);
   background-image: var(--bg-color);
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
+/* LANDING PAGE */
 .solarsystem {
   display: grid;
   grid-template-columns: auto;
@@ -108,7 +106,7 @@ body {
   }
 }
 
-/* SOLAR SYSTEM BODIES */
+/* SOLAR SYSTEM BODIES LANDING PAGE */
 
 #Solen {
   width: 90vw;
@@ -170,16 +168,6 @@ body {
   border-radius: 50%;
   background-color: #c7aa72;
 }
-
-/* .saturn__ring {
-  width: 218px;
-  height: 5.5px;
-  background-color: white;
-  opacity: 0.4;
-  border-radius: 50%;
-  transform: rotateZ(-30deg);
-  position: absolute;
-} */
 
 #Uranus {
   width: 66px;
@@ -304,6 +292,8 @@ body {
   border-radius: 50%;
 }
 
+/* MODAL FACTS SECTION */
+
 .planet__facts {
   max-width: 80%;
   padding: 2rem;
@@ -315,9 +305,8 @@ body {
 
 @media screen and (min-width: 900px) {
   .planet__facts {
-    max-width: 80%;
     grid-column: 2;
-    margin: 0;
+    margin: 0rem 0rem 2rem;
   }
 }
 
@@ -443,17 +432,13 @@ body {
   list-style-type: none;
   line-height: 2rem;
   columns: 2;
-  padding: 0.5rem 1rem 2rem;
+  padding: 1rem 0rem 2rem;
 }
 
 @media screen and (min-width: 1200px) {
   .moons {
     columns: 4;
   }
-}
-
-.hidden {
-  display: none;
 }
 
 @media screen and (min-width: 900px) {
@@ -470,4 +455,10 @@ body {
   .moons {
     font-size: var(--p-size-desktop);
   }
+}
+
+/* CLASS TO HIDE ELEMENTS */
+
+.hidden {
+  display: none;
 }

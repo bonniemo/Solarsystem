@@ -1,5 +1,5 @@
+// FETCH API DATA AND CREATE LANDING PAGE PLANETS
 const apiUrl = "https://majazocom.github.io/Data/solaris.json";
-const modal = document.querySelector(".modal");
 const landingPage = document.querySelector(".solarsystem");
 const planetsCont = document.querySelector(".planets__cont");
 let solarSystem = [];
@@ -22,12 +22,12 @@ async function fetchSolarSystem() {
     });
   } catch (error) {
     console.error("Error fetching solar system data:", error);
-  }
+  } 
 }
 fetchSolarSystem();
 
-// TARGET THE RIGHT PLANET INFO ELEMENT IN HTML
-
+// TARGET THE RIGHT ELEMENT FOR HTML MODAL
+const modal = document.querySelector(".modal");
 const planetName = document.querySelector(".name");
 const latinName = document.querySelector(".name__latin");
 const about = document.querySelector(".about");
@@ -37,6 +37,7 @@ const tempDay = document.querySelector(".temp__day");
 const tempNight = document.querySelector(".temp__night");
 const moonUl = document.querySelector(".moons");
 
+// RENDER INFO IN THE RIGHT PLACE AND HIDE/SHOW ELEMENTS ON CLICK
 function renderPlanetInfo(planet) {
   modal.classList.remove("hidden");
   landingPage.classList.add("hidden");
@@ -72,7 +73,6 @@ btnClose.addEventListener("click", () => {
 });
 
 // CREATE STARS
-
 const starCont = document.querySelector(".stars__cont");
 
 function createStars() {
